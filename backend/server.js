@@ -36,7 +36,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("MongoDB connected successfully");  // SUCCESS LOG ADDED HERE
+    console.log("MongoDB connected successfully");  
   })
   .catch((error) => {
     console.error("MongoDB connection error:", error);
@@ -60,7 +60,7 @@ io.on("connection", (socket) => {
     socket.on("disconnect", () => {
         console.log(`User Disconnected: ${socket.id}`);
     });
-    socket.on("typing", (data) => { // New "typing" event handler
+    socket.on("typing", (data) => { 
         socket.to(data.room).emit("user_typing", data);
     });
 });
